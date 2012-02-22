@@ -2,6 +2,7 @@
 <html>
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="javascripts/jquery.filterator.js" type="text/javascript"></script>
   <title>jQuery.filterator demo page</title>
 </head>
 <body>
@@ -11,7 +12,8 @@
     <a href="#" data-filter="green">Green</a>
     <a href="#" data-filter="blue">Blue</a>
   </div>
-  
+
+
   <div id="tone-filter">
     <label>Tone</label>
     <select>
@@ -53,6 +55,13 @@
       light green
     </li>
   </ul>
+  
+  <script type="text/javascript">
+    $('#color-filters').filterator({ target: 'color', container: '#elements' });
+    $('#tone-filter select').filterator({ target: 'tone', container: '#elements' });
+  </script>
+
+
 
 </body>
 </html>
