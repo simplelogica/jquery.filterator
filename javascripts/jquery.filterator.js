@@ -62,6 +62,7 @@
        * Handle filter controls
        */
       if (el.get(0).tagName == 'SELECT') {
+        
         // Select
         el.change(function() {
           var filter = $(this).val();
@@ -75,16 +76,29 @@
         });
 
       } else {
+
         // Links
-        // TODO mark link as active
         el.delegate('a', 'click', function(e) {
           e.preventDefault();
+          
+          var $t = $(this);
+
+          // If clicked current, do nothing
+          if ($t.hasClass('selected')) {
+            return;
+          }
+          
           var filter = $(this).data('filter');
           if (filter) {
             container.data('filter-' + target, filter);
           } else {
             container.removeData('filter-' + target);
           }
+          
+          // Mark current as selected
+          $t.siblings().removeClass('selected');
+          $t.addClass('selected');
+
           container.trigger('filter');
         });
 
