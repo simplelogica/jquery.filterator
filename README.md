@@ -30,6 +30,15 @@ And a collection of elements
       <li data-color="red">Red element</a>
     </ul>
 
+One element can have more than one value to the same attribute, but it must be in the same data-attribute. That's solved by using the '#' character as a delimiter between values
+
+    <ul id="collection">
+      ...
+      <li data-color="#green#red#">Yellow element</a>
+      ...
+    </ul>
+
+
 
 You could enable the filtering using:
 
