@@ -68,3 +68,6 @@ body {
 #elements [data-color=blue][data-tone=dark] {
   background:#00f;
 }
+#elements [data-color="#red#green#"][data-tone=dark] {
+  background:#ff0;
+}

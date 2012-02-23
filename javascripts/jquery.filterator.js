@@ -44,7 +44,7 @@
           // Filter and show filtered
           elements.filter(function() {
             for (filter in filters) {
-              if ($(this).data(filter) != filters[filter]) {
+              if (($(this).data(filter) != filters[filter]) && !($(this).data(filter).match("#"+filters[filter]+"#"))) {
                 return false;
               }
             }
