@@ -94,9 +94,11 @@
           } else {
             container.removeData('filter-' + target);
           }
-          
+
+          // In some cases (when links are included in an 'ul li' way and not together) marking siblings as unselected is not enough.
+          // We must get the element which delegate the event and marking every 'a' descendant as unselected (yeah, it's quite ugly)
+          $(e.delegateTarget).find("a").removeClass('selected');
           // Mark current as selected
-          $t.siblings().removeClass('selected');
           $t.addClass('selected');
 
           container.trigger('filter');
