@@ -43,12 +43,15 @@
           
           // Filter and show filtered
           elements.filter(function() {
+            $(this).removeClass("filtered");
+            $(this).removeClass("not-filtered");
             for (filter in filters) {
               if (($(this).data(filter) != filters[filter]) && !($(this).data(filter).match("#"+filters[filter]+"#"))) {
+                $(this).addClass("filtered");
                 return false;
               }
             }
-
+            $(this).addClass("not-filtered");
             return true;
           }).show();
 
